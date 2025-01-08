@@ -73,7 +73,7 @@ async def settings_mar(client, message: Message, _):
     )
 
 
-@app.on_callback_query(filters.regex("settings_helper") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("settings_yardım") & ~BANNED_USERS)
 @languageCB
 async def settings_cb(client, CallbackQuery, _):
     try:
@@ -90,7 +90,7 @@ async def settings_cb(client, CallbackQuery, _):
     )
 
 
-@app.on_callback_query(filters.regex("settingsback_helper") & ~BANNED_USERS)
+@app.on_callback_query(filters.regex("settingsback_yardım") & ~BANNED_USERS)
 @languageCB
 async def settings_back_markup(
     client, CallbackQuery: CallbackQuery, _, message: Message
@@ -351,11 +351,11 @@ async def playmode_ans(client, CallbackQuery, _):
         except:
             pass
         playty = await get_playtype(CallbackQuery.message.chat.id)
-        if playty == "Everyone":
+        if playty == "Herkes":
             await set_playtype(CallbackQuery.message.chat.id, "Admin")
             Playtype = False
         else:
-            await set_playtype(CallbackQuery.message.chat.id, "Everyone")
+            await set_playtype(CallbackQuery.message.chat.id, "Herkes")
             Playtype = True
         playmode = await get_playmode(CallbackQuery.message.chat.id)
         if playmode == "Direct":
