@@ -108,7 +108,7 @@ clean = {}
 autoclean = []
 
 START_IMG_URL = getenv(
-    "START_IMG_URL", "https://telegra.ph/file/d593c6064ff7657d0c714.jpg"
+    "START_IMG_URL", "https://graph.org/file/729c51633d52f7618a071-1afcb0eb7166d5f0c5.jpg"
 )
 
 PING_IMG_URL = getenv(
@@ -183,14 +183,14 @@ SONG_DOWNLOAD_DURATION_LIMIT = int(time_to_seconds(f"{SONG_DOWNLOAD_DURATION}:00
 if SUPPORT_CHANNEL:
     if not re.match("(?:http|https)://", SUPPORT_CHANNEL):
         print(
-            "[ERROR] - Your SUPPORT_CHANNEL url is wrong. Please ensure that it starts with https://"
+            "[ERROR] - SUPPORT_GROUP URL'niz yanlış. Lütfen şununla başladığından emin olun: https://"
         )
         sys.exit()
 
 if SUPPORT_GROUP:
     if not re.match("(?:http|https)://", SUPPORT_GROUP):
         print(
-            "[ERROR] - Your SUPPORT_GROUP url is wrong. Please ensure that it starts with https://"
+            "[ERROR] - SUPPORT_GROUP URL'niz yanlış. Lütfen şununla başladığından emin olun: https://"
         )
         sys.exit()
 
