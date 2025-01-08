@@ -56,7 +56,7 @@ async def play_commnd(
     fplay,
 ):
     mystic = await message.reply_text(
-        _["oynat_2"].format(channel) if channel else _["oynat_1"]
+        _["play_2"].format(channel) if channel else _["play_1"]
     )
     plist_id = None
     slider = None
