@@ -50,7 +50,7 @@ XCB = [
 def dbb():
     global db
     db = {}
-    LOGGER(__name__).info("Database Initialized.")
+    LOGGER(__name__).info("Veritabanı Başlatıldı.")
 
 
 async def sudo():
@@ -82,5 +82,5 @@ def heroku():
                 LOGGER(__name__).info(f"Heroku App Configured")
             except BaseException:
                 LOGGER(__name__).warning(
-                    f"Please make sure your Heroku API Key and Your App name are configured correctly in the heroku."
+                    f"Lütfen Heroku API Anahtarınızın ve Uygulama adınızın heroku'da doğru şekilde yapılandırıldığından emin olun.."
                 )
