@@ -21,5 +21,5 @@ i = c("Alexa", api_id=API_ID, api_hash=API_HASH, in_memory=True)
 
 with i:
     ss = i.export_session_string()
-    print("\nHERE IS YOUR STRING SESSION, COPY IT, DON'T SHARE!!\n")
+    print("\nİŞTE STRING OTURUMUNUZ, KOPYALAYIN, PAYLAŞMAYIN!!\n")
     print(f"\n{ss}\n")
