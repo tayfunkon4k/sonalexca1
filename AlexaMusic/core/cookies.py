@@ -36,6 +36,6 @@ def save_cookies():
 
     file_path = save_file(pastebin_url)
     if file_path and os.path.getsize(file_path) > 0:
-        LOGGER(__name__).info(f"Cookies saved successfully to {file_path}.")
+        LOGGER(__name__).info(f"Çerezler başarıyla şuraya kaydedildi: {file_path}.")
     else:
-        LOGGER(__name__).error("Failed to save cookies or the file is empty.")
+        LOGGER(__name__).error("Çerezler kaydedilemedi veya dosya boş.")
