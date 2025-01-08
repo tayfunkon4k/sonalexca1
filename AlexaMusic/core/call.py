@@ -276,11 +276,11 @@ class Call(PyTgCalls):
                 )
             except Exception as e:
                 raise AssistantErr(
-                    "**ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ғᴏᴜɴᴅ**\n\nᴩʟᴇᴀsᴇ ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ."
+                    "**aktif görüntülü sohbet yok**\n\Lütfen Sesli Sohbeti Aktif Edip Tekrar Deneyin."
                 )
         except ChatAdminRequired:
             raise AssistantErr(
-                "**ɴᴏ ᴀᴄᴛɪᴠᴇ ᴠɪᴅᴇᴏ ᴄʜᴀᴛ ғᴏᴜɴᴅ**\n\nᴩʟᴇᴀsᴇ ᴍᴀᴋᴇ sᴜʀᴇ ʏᴏᴜ sᴛᴀʀᴛᴇᴅ ᴛʜᴇ ᴠɪᴅᴇᴏᴄʜᴀᴛ."
+                "**aktif görüntülü sohbet yok**\n\nLütfen Sesli Sohbeti Aktif Edip Tekrar Deneyin."
             )
         except AlreadyJoinedError:
             raise AssistantErr(
