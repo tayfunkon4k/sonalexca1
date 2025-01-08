@@ -277,7 +277,7 @@ async def welcome(client, message: Message):
             return
 
 
-@app.on_message(commandpro(["/alive", "Sago"]))
+@app.on_message(commandpro(["/alive", "Sago KafKef"]))
 async def alive(client, message: Message):
     await message.reply_photo(
         photo=f"https://graph.org/file/ba40f2394bd7275c7363f-e2a6fd9c0fbe0c1501.jpg",
