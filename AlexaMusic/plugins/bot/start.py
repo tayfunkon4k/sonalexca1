@@ -300,6 +300,6 @@ async def verify(client, message: Message):
         photo=f"https://graph.org/file/ba40f2394bd7275c7363f-e2a6fd9c0fbe0c1501.jpg",
         caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ **Tebrikler** 🎉\n✪ artık sago onaylı üyesiniz, geri dönün ve hizmetimizin keyfini çıkarın ve müzik çalın 🌼 ..\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🌼 Sago ᴄʜᴀᴛ 💮", (https://t.me/Merhametinedon)]]
+            [[InlineKeyboardButton("🌼 Sago ᴄʜᴀᴛ 💮", [ Sagonun Kalemi ](https://t.me/SagonunKalemi)]]
         ),
     )
