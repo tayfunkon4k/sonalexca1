@@ -57,13 +57,13 @@ async def inline_query_handler(client, query):
             searched_text = f"""
 📌**ᴛɪᴛʟᴇ:** [{title}]({link})
 
-⏳**ᴅᴜʀᴀᴛɪᴏɴ:** {duration} Mins
-👀**ᴠɪᴇᴡs:** `{views}`
+⏳**Süre:** {duration} Mins
+👀**Oynatılan:** `{views}`
 ⏰**ᴩᴜʙʟɪsʜᴇᴅ ᴏɴ:** {published}
-🎥**ᴄʜᴀɴɴᴇʟ:** {channel}
-📎**ᴄʜᴀɴɴᴇʟ ʟɪɴᴋ:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
+🎥**Kanal:** {channel}
+📎**Kanal Linki:** [ᴠɪsɪᴛ ᴄʜᴀɴɴᴇʟ]({channellink})
 
-💖 ** sᴇᴀʀᴄʜ ᴩᴏᴡᴇʀᴇᴅ ʙʏ {MUSIC_BOT_NAME} **"""
+💖 ** Oynatılıyor. {MUSIC_BOT_NAME} **"""
             answers.append(
                 InlineQueryResultPhoto(
                     photo_url=thumbnail,
