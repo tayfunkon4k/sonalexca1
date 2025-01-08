@@ -41,7 +41,7 @@ async def stream_command(
 ):
     if url:
         mystic = await message.reply_text(
-            _["play_2"].format(channel) if channel else _["play_1"]
+            _["oynat_2"].format(channel) if channel else _["oynat_1"]
         )
         try:
             await Alexa.stream_call(url)
