@@ -51,12 +51,12 @@ async def start_comm(client, message: Message, _):
     await add_served_user(message.from_user.id)
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
-        if name[0:4] == "help":
+        if name[0:4] == "yardım":
             keyboard = help_pannel(_)
             return await message.reply_text(_["help_1"], reply_markup=keyboard)
-        if name[0:4] == "song":
+        if name[0:4] == "şarkı":
             return await message.reply_text(_["song_2"])
-        if name[0:3] == "sta":
+        if name[0:3] == "şarkı2":
             m = await message.reply_text(
                 "🥱 kişisel istatistiklerinizi alma ғʀᴏᴍ {config.MUSIC_BOT_NAME} sunucu."
             )
@@ -94,7 +94,7 @@ async def start_comm(client, message: Message, _):
                     details = stats.get(vidid)
                     title = (details["title"][:35]).title()
                     if vidid == "telegram":
-                        msg += f"🔗[ᴛᴇʟᴇɢʀᴀᴍ ᴍᴇᴅɪᴀ](https://t.me/Shayri_Music_Lovers) ** Oynatıldı {count} ᴛɪᴍᴇs**\n\n"
+                        msg += f"🔗[ Yardım İçin ](https://t.me/Silahsiz_Kuvvett) ** Oynatıldı {count} ᴛɪᴍᴇs**\n\n"
                     else:
                         msg += f"🔗 [{title}](https://www.youtube.com/watch?v={vidid}) ** Oynatıldı {count} kez**\n\n"
                 msg = _["ustats_2"].format(tot, tota, limit) + msg
@@ -119,7 +119,7 @@ async def start_comm(client, message: Message, _):
                     f"{message.from_user.mention} bot kontrolünü yeni başlattım <code>sᴜᴅᴏʟɪsᴛ</code>\n\n**Hesap ID:** {sender_id}\n**Kullanıcı:** {sender_name}",
                 )
             return
-        if name[0:3] == "lyr":
+        if name[0:3] == "söz":
             query = (str(name)).replace("lyrics_", "", 1)
             lyrical = config.lyrical
             lyrics = lyrical.get(query)
@@ -135,18 +135,18 @@ async def start_comm(client, message: Message, _):
             query = f"https://www.youtube.com/watch?v={query}"
             results = VideosSearch(query, limit=1)
             for result in (await results.next())["result"]:
-                title = result["title"]
-                duration = result["duration"]
-                views = result["viewCount"]["short"]
-                thumbnail = result["thumbnails"][0]["url"].split("?")[0]
-                channellink = result["channel"]["link"]
-                channel = result["channel"]["name"]
+                title = result["başlık"]
+                duration = result["süre"]
+                views = result["görüntüleme sayısı"]["kısa"]
+                thumbnail = result["küçük resimler"][0]["url"].split("?")[0]
+                channellink = result["Kanal"]["link"]
+                channel = result["kanal"]["isim"]
                 link = result["link"]
-                published = result["publishedTime"]
+                published = result["yayınlanma zamanı"]
             searched_text = f"""
 😲**bilgileri takip et**😲
 
-📌**ᴛɪᴛʟᴇ:** {title}
+📌**Başlık:** {title}
 
 ⏳**süre:** {duration} Dakika
 👀**görünümler:** `{views}`
@@ -233,7 +233,7 @@ async def welcome(client, message: Message):
     if config.PRIVATE_BOT_MODE == str(True):
         if not await is_served_private_chat(message.chat.id):
             await message.reply_text(
-                "**ᴩʀɪᴠᴀᴛᴇ ᴍᴜsɪᴄ ʙᴏᴛ**\n\nᴏɴʟʏ ғᴏʀ ᴛʜᴇ ᴄʜᴀᴛs ᴀᴜᴛʜᴏʀɪsᴇᴅ ʙʏ ᴍʏ ᴏᴡɴᴇʀ, ʀᴇǫᴜᴇsᴛ ɪɴ ᴍʏ ᴏᴡɴᴇʀ's ᴩᴍ ᴛᴏ ᴀᴜᴛʜᴏʀɪsᴇ ʏᴏᴜʀ ᴄʜᴀᴛ ᴀɴᴅ ɪғ ʏᴏᴜ ᴅᴏɴ'ᴛ ᴡᴀɴᴛ ᴛᴏ ᴅᴏ sᴏ ᴛʜᴇɴ ғᴜ*ᴋ ᴏғғ ʙᴇᴄᴀᴜsᴇ ɪ'ᴍ ʟᴇᴀᴠɪɴɢ."
+                "**özel müzik botu**\n\nᴏɴʟʏ ғᴏʀ ᴛʜᴇ ᴄʜᴀᴛs ᴀᴜᴛʜᴏʀɪsᴇᴅ ʙʏ ᴍʏ ᴏᴡɴᴇʀ, ʀᴇǫᴜᴇsᴛ ɪɴ ᴍʏ ᴏᴡɴᴇʀ's ᴩᴍ ᴛᴏ ᴀᴜᴛʜᴏʀɪsᴇ ʏᴏᴜʀ ᴄʜᴀᴛ ᴀɴᴅ ɪғ ʏᴏᴜ ᴅᴏɴ'ᴛ ᴡᴀɴᴛ ᴛᴏ ᴅᴏ sᴏ ᴛʜᴇɴ ғᴜ*ᴋ ᴏғғ ʙᴇᴄᴀᴜsᴇ ɪ'ᴍ ʟᴇᴀᴠɪɴɢ."
             )
             return await app.leave_chat(message.chat.id)
     else:
@@ -277,29 +277,29 @@ async def welcome(client, message: Message):
             return
 
 
-@app.on_message(commandpro(["/alive", "Alexa"]))
+@app.on_message(commandpro(["/alive", "Sago"]))
 async def alive(client, message: Message):
     await message.reply_photo(
         photo=f"https://graph.org/file/ba40f2394bd7275c7363f-e2a6fd9c0fbe0c1501.jpg",
-        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ ʜᴇʟʟᴏ, ᴀʟᴇxᴀ ɪs ᴡᴏʀᴋɪɴɢ ᴀɴᴅ ғᴜɴᴄᴛɪᴏɴɪɴɢ ᴘʀᴏᴘᴇʀʟʏ\n✪ ᴛʜᴀɴᴋs ᴛᴏ ʏᴜᴋᴋɪ ᴛᴇᴀᴍ 🌼 ..\n\n┏━━━━━━━━━━━━━━━━━┓\n┣★ ᴏᴡɴᴇʀ    : [ᴀsᴀᴅ ᴀʟɪ](https://t.me/Dr_Asad_Ali)\n┣★ ᴜᴘᴅᴀᴛᴇs › : [ᴀʟᴇxᴀ ʜᴇʟᴘ](https://t.me/Alexa_BotUpdates)┓\n┣★ ʀᴇᴘᴏ › : [ᴀʟᴇxᴀ ʀᴇᴘᴏ](https://github.com/jankarikiduniya/AlexaMusic)\n┗━━━━━━━━━━━━━━━━━┛\n\n💞 ɪғ ʏᴏᴜ ʜᴀᴠᴇ ᴀɴʏ ǫᴜᴇsᴛɪᴏɴs ᴛʜᴇɴ\nᴅᴍ ᴛᴏ ᴍʏ [ᴏᴡɴᴇʀ](https://t.me/Jankari_Ki_Duniya) ᴍᴀᴋᴇ sᴜʀᴇ ᴛᴏ sᴛᴀʀ ᴏᴜʀ ᴘʀᴏᴊᴇᴄᴛ ...\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
+        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ Merhaba, Sago sorunsuz çalışıyor.\n✪ Teşekkürler @Merhametinedon 🌼 ..\n\n┏━━━━━━━━━━━━━━━━━┓\n┣★ ᴏᴡɴᴇʀ    : [ Merhametine Dön ](https://t.me/Merhametinedon)\n┣★ ᴜᴘᴅᴀᴛᴇs › : [ Sago Yardım ](https://t.me/SefillerSohbetr)┓\n┣★ Sago Rap › : [ Sagonun Kalemi ]https://t.me/SefillerSohbetr)\n┗━━━━━━━━━━━━━━━━━┛\n\n💞 eğer herhangi bir sorunuz varsa o zaman\nBana Dm Gönderin [ᴏᴡɴᴇʀ](https://t.me/Merhametinedon) projemize yıldız saati eklediğinizden emin olun ...\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🌼 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💮", url=config.SUPPORT_GROUP)]]
+            [[InlineKeyboardButton("🌼 Sago ᴄʜᴀᴛ 💮", url=config.SUPPORT_GROUP)]]
         ),
     )
 
 
-@app.on_message(commandpro(["/verify", "alexaverification"]))
+@app.on_message(commandpro(["/kontrol", "kontrol"]))
 async def verify(client, message: Message):
     if await is_served_user(message.from_user.id):
         await message.reply_text(
-            text="😂 ᴅᴇᴀʀ ʏᴏᴜ ᴀʀᴇ ᴀʟʀᴇᴀᴅʏ ᴠᴇʀɪғɪᴇᴅ",
+            text="😂 öldün zaten doğrulandın",
         )
         return
     await add_served_user(message.from_user.id)
     await message.reply_photo(
-        photo=f"https://graph.org/file/729c51633d52f7618a071-1afcb0eb7166d5f0c5.jpg",
-        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ **ᴄᴏɴɢʀᴀᴛᴜʟᴀᴛɪᴏɴ** 🎉\n✪ ɴᴏᴡ ʏᴏᴜ ᴀʀᴇ ᴀʟᴇxᴀ ᴠᴇʀɪғɪᴇᴅ ᴍᴇᴍʙᴇʀ ɢᴏ ʙᴀᴄᴋ ᴀɴᴅ ᴇɴᴊᴏʏ ᴏᴜʀ sᴇʀᴠɪᴄᴇ ᴀɴᴅ ᴘʟᴀʏ ᴍᴜsɪᴄ 🌼 ..\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
+        photo=f"https://graph.org/file/ba40f2394bd7275c7363f-e2a6fd9c0fbe0c1501.jpg",
+        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ **Tebrikler** 🎉\n✪ artık sago onaylı üyesiniz, geri dönün ve hizmetimizin keyfini çıkarın ve müzik çalın 🌼 ..\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(
-            [[InlineKeyboardButton("🌼 ᴀʟᴇxᴀ ᴄʜᴀᴛ 💮", url=config.SUPPORT_GROUP)]]
+            [[InlineKeyboardButton("🌼 Sago ᴄʜᴀᴛ 💮", url=config.SUPPORT_GROUP)]]
         ),
     )
