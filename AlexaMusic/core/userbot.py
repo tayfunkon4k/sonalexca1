@@ -61,7 +61,7 @@ class Userbot(Client):
         )
 
     async def start(self):
-        LOGGER(__name__).info(f"Starting Assistant Clients...")
+        LOGGER(__name__).info(f"Asistan İstemcilerini Başlatma...")
         if config.STRING1:
             await self.one.start()
             try:
@@ -78,7 +78,7 @@ class Userbot(Client):
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 1 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"Asistan Hesabı 1, günlük Grubuna erişemedi. Asistanınızı günlük grubunuza eklediğinizden ve yönetici olarak terfi ettirdiğinizden emin olun. ! "
                 )
                 sys.exit()
             get_me = await self.one.get_me()
@@ -89,7 +89,7 @@ class Userbot(Client):
                 self.one.name = get_me.first_name + " " + get_me.last_name
             else:
                 self.one.name = get_me.first_name
-            LOGGER(__name__).info(f"Assistant Started as {self.one.name}")
+            LOGGER(__name__).info(f"Asistan şu şekilde başladı: {self.one.name}")
         if config.STRING2:
             await self.two.start()
             try:
@@ -106,7 +106,7 @@ class Userbot(Client):
                 )
             except:
                 LOGGER(__name__).error(
-                    f"Assistant Account 2 has failed to access the log Group. Make sure that you have added your assistant to your log group and promoted as admin ! "
+                    f"Asistan Hesabı 2, günlük Grubuna erişemedi. Asistanınızı günlük grubunuza eklediğinizden ve yönetici olarak terfi ettirdiğinizden emin olun. ! "
                 )
                 sys.exit()
             get_me = await self.two.get_me()
