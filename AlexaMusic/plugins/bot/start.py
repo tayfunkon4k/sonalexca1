@@ -281,7 +281,7 @@ async def welcome(client, message: Message):
 async def alive(client, message: Message):
     await message.reply_photo(
         photo=f"https://graph.org/file/ba40f2394bd7275c7363f-e2a6fd9c0fbe0c1501.jpg",
-        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ Merhaba, Sago Müzik Bot sorunsuz çalışıyor.\n✪ Teşekkürler @SilahsızKuvvett 🌼 ..\n\n┏━━━━━━━━━━━━━━━━━┓\n┣★ ᴏᴡɴᴇʀ    : [ Merhametine Dön ](https://t.me/SilahsizKuvvett)\n┣★ ᴜᴘᴅᴀᴛᴇs › : [ Sago Yardım ](https://t.me/SefillerSohbetr)┓\n┣★ Sago Rap › : [ Sagonun Kalemi ]https://t.me/SagonunKalemi)\n┗━━━━━━━━━━━━━━━━━┛\n\n💞 eğer herhangi bir sorunuz varsa o zaman\nBana Dm Gönderin [ᴏᴡɴᴇʀ](https://t.me/SilahsizKuvvett) projemize yıldız saati eklediğinizden emin olun ...\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
+        caption=f"""━━━━━━━━━━━━━━━━━━━━━━━━\n\n✪ Merhaba, Sago Müzik Bot sorunsuz çalışıyor.\n✪ Teşekkürler @SilahsizKuvvett 🌼 ..\n\n┏━━━━━━━━━━━━━━━━━┓\n┣★ ᴏᴡɴᴇʀ    : [ Merhametine Dön ](https://t.me/SilahsizKuvvett)\n┣★ ᴜᴘᴅᴀᴛᴇs › : [ Sago Yardım ](https://t.me/SefillerSohbetr)┓\n┣★ Sago Rap › : [ Sagonun Kalemi ]https://t.me/SagonunKalemi)\n┗━━━━━━━━━━━━━━━━━┛\n\n💞 eğer herhangi bir sorunuz varsa o zaman\nBana Dm Gönderin [ᴏᴡɴᴇʀ](https://t.me/SilahsizKuvvett) projemize yıldız saati eklediğinizden emin olun ...\n\n━━━━━━━━━━━━━━━━━━━━━━━━""",
         reply_markup=InlineKeyboardMarkup(
             [[InlineKeyboardButton("🌼 Sago ᴄʜᴀᴛ 💮", url=config.SUPPORT_GROUP)]]
         ),
